@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+# 🐶 Rede Social para Cachorros  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma rede social onde os donos de cachorros podem compartilhar fotos de seus pets, curtir postagens e interagir com a comunidade. O backend é baseado na **API REST do WordPress**, com endpoints personalizados para manipulação dos dados.  
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas  
+- **Frontend:** React, TypeScript, Vite, React Router, Styled Components (ou Tailwind)  
+- **Backend:** API do WordPress + Endpoints PHP personalizados  
+- **Autenticação:** JWT (JSON Web Token)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Como Rodar o Projeto  
 
-## Expanding the ESLint configuration
+### **1️⃣ Backend (WordPress API + Endpoints PHP)**  
+1. Instale o WordPress em um servidor local ou online.  
+2. No diretório do tema ou de um plugin personalizado, crie os arquivos PHP com as funções CRUD para gerenciar usuários e postagens.  
+3. Instale e ative o plugin de autenticação JWT (caso esteja usando JWT para login).  
+4. Configure o CORS e as permissões da API.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### **2️⃣ Frontend (React + Vite)**  
+1. Clone este repositório:  
+   ```bash
+   git clone https://github.com/mungongo/rede-social-cachorros.git```
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
